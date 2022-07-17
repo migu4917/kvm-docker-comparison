@@ -1,0 +1,14 @@
+TCP_RR
+MIGRATED TCP REQUEST/RESPONSE TEST from 0.0.0.0 (0.0.0.0) port 0 AF_INET to 192.168.137.1 () port 0 AF_INET : demo : first burst 0
+ Maximum      Mean         90th         99th         Stddev       Throughput Throughput 
+ Latency      Latency      Percentile   Percentile   Latency                 Units      
+ Microseconds Microseconds Latency      Latency      Microseconds                       
+                           Microseconds Microseconds                                    
+ 6467         729.52       784          848          85.37        1369.88    Trans/s    
+UDP_RR
+MIGRATED UDP REQUEST/RESPONSE TEST from 0.0.0.0 (0.0.0.0) port 0 AF_INET to 192.168.137.1 () port 0 AF_INET : demo : first burst 0
+ Maximum      Mean         90th         99th         Stddev       Throughput Throughput 
+ Latency      Latency      Percentile   Percentile   Latency                 Units      
+ Microseconds Microseconds Latency      Latency      Microseconds                       
+                           Microseconds Microseconds                                    
+ 2217         734.95       799          925          87.56        1359.78    Trans/s    

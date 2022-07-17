@@ -1,0 +1,125 @@
+Sending build context to Docker daemon  10.75kB
+Step 1/4 : FROM ubuntu:18.04
+ ---> f9ea66feed08
+Step 2/4 : RUN apt-get update     && apt-get -qq install iperf3 -y
+ ---> Running in f3336538583e
+Get:1 http://ports.ubuntu.com/ubuntu-ports bionic InRelease [242 kB]
+Get:2 http://ports.ubuntu.com/ubuntu-ports bionic-updates InRelease [88.7 kB]
+Get:3 http://ports.ubuntu.com/ubuntu-ports bionic-backports InRelease [74.6 kB]
+Get:4 http://ports.ubuntu.com/ubuntu-ports bionic-security InRelease [88.7 kB]
+Get:5 http://ports.ubuntu.com/ubuntu-ports bionic/universe arm64 Packages [11.0 MB]
+Get:6 http://ports.ubuntu.com/ubuntu-ports bionic/main arm64 Packages [1285 kB]
+Get:7 http://ports.ubuntu.com/ubuntu-ports bionic/restricted arm64 Packages [572 B]
+Get:8 http://ports.ubuntu.com/ubuntu-ports bionic/multiverse arm64 Packages [153 kB]
+Get:9 http://ports.ubuntu.com/ubuntu-ports bionic-updates/multiverse arm64 Packages [5354 B]
+Get:10 http://ports.ubuntu.com/ubuntu-ports bionic-updates/universe arm64 Packages [2056 kB]
+Get:11 http://ports.ubuntu.com/ubuntu-ports bionic-updates/restricted arm64 Packages [5476 B]
+Get:12 http://ports.ubuntu.com/ubuntu-ports bionic-updates/main arm64 Packages [1989 kB]
+Get:13 http://ports.ubuntu.com/ubuntu-ports bionic-backports/main arm64 Packages [12.2 kB]
+Get:14 http://ports.ubuntu.com/ubuntu-ports bionic-backports/universe arm64 Packages [12.5 kB]
+Get:15 http://ports.ubuntu.com/ubuntu-ports bionic-security/main arm64 Packages [1609 kB]
+Get:16 http://ports.ubuntu.com/ubuntu-ports bionic-security/restricted arm64 Packages [4803 B]
+Get:17 http://ports.ubuntu.com/ubuntu-ports bionic-security/universe arm64 Packages [1360 kB]
+Get:18 http://ports.ubuntu.com/ubuntu-ports bionic-security/multiverse arm64 Packages [2755 B]
+Fetched 20.0 MB in 11s (1744 kB/s)
+Reading package lists...
+[91mdebconf: delaying package configuration, since apt-utils is not installed
+[0mSelecting previously unselected package libiperf0:arm64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4044 files and directories currently installed.)
+Preparing to unpack .../libiperf0_3.1.3-1_arm64.deb ...
+Unpacking libiperf0:arm64 (3.1.3-1) ...
+Selecting previously unselected package iperf3.
+Preparing to unpack .../iperf3_3.1.3-1_arm64.deb ...
+Unpacking iperf3 (3.1.3-1) ...
+Setting up libiperf0:arm64 (3.1.3-1) ...
+Setting up iperf3 (3.1.3-1) ...
+Processing triggers for libc-bin (2.27-3ubuntu1.6) ...
+Removing intermediate container f3336538583e
+ ---> ca3cde0a89cd
+Step 3/4 : ENTRYPOINT ["iperf3"]
+ ---> Running in 87a68e0786c7
+Removing intermediate container 87a68e0786c7
+ ---> 1b263d6f6f6d
+Step 4/4 : CMD []
+ ---> Running in 1db40e3e1397
+Removing intermediate container 1db40e3e1397
+ ---> 04b5de109bca
+Successfully built 04b5de109bca
+Successfully tagged iperf3:latest
+Start Testing TCP bandwidth
+iperf 3.1.3
+Linux 6b2f4e5ee4be 4.9.140-tegra #1 SMP PREEMPT Sat Nov 13 14:10:17 UTC 2021 aarch64
+Time: Sat, 16 Jul 2022 12:31:29 GMT
+Connecting to host 192.168.137.1, port 8080
+      Cookie: 6b2f4e5ee4be.1657974689.449047.7884e
+      TCP MSS: 1448 (default)
+[  4] local 172.17.0.2 port 37596 connected to 192.168.137.1 port 8080
+Starting Test: protocol: TCP, 1 streams, 131072 byte blocks, omitting 0 seconds, 20 second test
+[ ID] Interval           Transfer     Bandwidth       Retr  Cwnd
+[  4]   0.00-1.00   sec   102 MBytes   854 Mbits/sec   19    222 KBytes       
+[  4]   1.00-2.00   sec   112 MBytes   935 Mbits/sec   50    216 KBytes       
+[  4]   2.00-3.00   sec   112 MBytes   942 Mbits/sec    0    216 KBytes       
+[  4]   3.00-4.00   sec   112 MBytes   941 Mbits/sec    0    216 KBytes       
+[  4]   4.00-5.00   sec   112 MBytes   941 Mbits/sec    0    216 KBytes       
+[  4]   5.00-6.00   sec   112 MBytes   941 Mbits/sec    0    216 KBytes       
+[  4]   6.00-7.00   sec   112 MBytes   942 Mbits/sec    0    216 KBytes       
+[  4]   7.00-8.00   sec   112 MBytes   941 Mbits/sec    0    216 KBytes       
+[  4]   8.00-9.00   sec   112 MBytes   941 Mbits/sec    0    216 KBytes       
+[  4]   9.00-10.00  sec   112 MBytes   941 Mbits/sec    0    216 KBytes       
+[  4]  10.00-11.00  sec   112 MBytes   942 Mbits/sec    0    216 KBytes       
+[  4]  11.00-12.00  sec   112 MBytes   941 Mbits/sec    0    216 KBytes       
+[  4]  12.00-13.00  sec   112 MBytes   941 Mbits/sec    0    216 KBytes       
+[  4]  13.00-14.00  sec   112 MBytes   941 Mbits/sec    0    216 KBytes       
+[  4]  14.00-15.00  sec   112 MBytes   942 Mbits/sec    0    216 KBytes       
+[  4]  15.00-16.00  sec   102 MBytes   860 Mbits/sec   35    212 KBytes       
+[  4]  16.00-17.00  sec   112 MBytes   941 Mbits/sec    0    212 KBytes       
+[  4]  17.00-18.00  sec   112 MBytes   942 Mbits/sec    0    212 KBytes       
+[  4]  18.00-19.00  sec   112 MBytes   937 Mbits/sec   32    208 KBytes       
+[  4]  19.00-20.00  sec   112 MBytes   940 Mbits/sec   11    202 KBytes       
+- - - - - - - - - - - - - - - - - - - - - - - - -
+Test Complete. Summary Results:
+[ ID] Interval           Transfer     Bandwidth       Retr
+[  4]   0.00-20.00  sec  2.17 GBytes   932 Mbits/sec  147             sender
+[  4]   0.00-20.00  sec  2.17 GBytes   932 Mbits/sec                  receiver
+CPU Utilization: local/sender 3.8% (0.1%u/3.7%s), remote/receiver 0.1% (0.0%u/0.0%s)
+
+iperf Done.
+
+Start Testing UDP bandwidth
+iperf 3.1.3
+Linux 4b26d1991659 4.9.140-tegra #1 SMP PREEMPT Sat Nov 13 14:10:17 UTC 2021 aarch64
+Time: Sat, 16 Jul 2022 12:31:50 GMT
+Connecting to host 192.168.137.1, port 8080
+      Cookie: 4b26d1991659.1657974710.602903.17452
+[  4] local 172.17.0.2 port 49839 connected to 192.168.137.1 port 8080
+Starting Test: protocol: UDP, 1 streams, 8192 byte blocks, omitting 0 seconds, 20 second test
+[ ID] Interval           Transfer     Bandwidth       Total Datagrams
+[  4]   0.00-1.00   sec   118 MBytes   989 Mbits/sec  15089  
+[  4]   1.00-2.00   sec   115 MBytes   965 Mbits/sec  14722  
+[  4]   2.00-3.00   sec   117 MBytes   979 Mbits/sec  14933  
+[  4]   3.00-4.00   sec   124 MBytes  1.04 Gbits/sec  15926  
+[  4]   4.00-5.00   sec   120 MBytes  1.01 Gbits/sec  15375  
+[  4]   5.00-6.00   sec   119 MBytes   998 Mbits/sec  15229  
+[  4]   6.00-7.00   sec   117 MBytes   980 Mbits/sec  14954  
+[  4]   7.00-8.00   sec   116 MBytes   976 Mbits/sec  14893  
+[  4]   8.00-9.00   sec   126 MBytes  1.05 Gbits/sec  16069  
+[  4]   9.00-10.00  sec   120 MBytes  1.01 Gbits/sec  15349  
+[  4]  10.00-11.00  sec   109 MBytes   917 Mbits/sec  13991  
+[  4]  11.00-12.00  sec   123 MBytes  1.03 Gbits/sec  15720  
+[  4]  12.00-13.00  sec   122 MBytes  1.03 Gbits/sec  15648  
+[  4]  13.00-14.00  sec   116 MBytes   973 Mbits/sec  14851  
+[  4]  14.00-15.00  sec   122 MBytes  1.03 Gbits/sec  15655  
+[  4]  15.00-16.00  sec   120 MBytes  1.01 Gbits/sec  15422  
+[  4]  16.00-17.00  sec   114 MBytes   957 Mbits/sec  14598  
+[  4]  17.00-18.00  sec   120 MBytes  1.00 Gbits/sec  15322  
+[  4]  18.00-19.00  sec   120 MBytes  1.01 Gbits/sec  15331  
+[  4]  19.00-20.00  sec   115 MBytes   962 Mbits/sec  14685  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+Test Complete. Summary Results:
+[ ID] Interval           Transfer     Bandwidth       Jitter    Lost/Total Datagrams
+[  4]   0.00-20.00  sec  2.32 GBytes   995 Mbits/sec  0.091 ms  59236/303735 (20%)  
+[  4] Sent 303735 datagrams
+CPU Utilization: local/sender 22.2% (1.0%u/21.3%s), remote/receiver 26.2% (8.5%u/17.7%s)
+
+iperf Done.
+Experiment completed

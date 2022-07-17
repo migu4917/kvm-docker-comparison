@@ -1,6 +1,6 @@
 #!/bin/sh
 
-SUT=arldcn24
+SUT=${USER}
 DIR=`pwd`
 
 # TODO make sure /ferrari is mounted

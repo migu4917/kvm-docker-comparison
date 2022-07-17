@@ -1,0 +1,30 @@
+Sending build context to Docker daemon  230.9kB
+Step 1/4 : FROM ubuntu:18.04
+ ---> f9ea66feed08
+Step 2/4 : COPY netperf /usr/bin/netperf
+ ---> Using cache
+ ---> 50a345e01de8
+Step 3/4 : ENTRYPOINT ["netperf"]
+ ---> Using cache
+ ---> e73257053975
+Step 4/4 : CMD []
+ ---> Using cache
+ ---> 12974772bf83
+Successfully built 12974772bf83
+Successfully tagged netperf:latest
+MIGRATED TCP REQUEST/RESPONSE TEST from 0.0.0.0 (0.0.0.0) port 0 AF_INET to 192.168.137.1 () port 0 AF_INET : demo : first burst 0
+enable_enobufs failed: getprotobyname
+ Maximum      Mean         90th         99th         Stddev       Throughput Throughput 
+ Latency      Latency      Percentile   Percentile   Latency                 Units      
+ Microseconds Microseconds Latency      Latency      Microseconds                       
+                           Microseconds Microseconds                                    
+ 2599         742.76       805          913          57.81        1345.46    Trans/s    
+MIGRATED UDP REQUEST/RESPONSE TEST from 0.0.0.0 (0.0.0.0) port 0 AF_INET to 192.168.137.1 () port 0 AF_INET : demo : first burst 0
+enable_enobufs failed: getprotobyname
+ Maximum      Mean         90th         99th         Stddev       Throughput Throughput 
+ Latency      Latency      Percentile   Percentile   Latency                 Units      
+ Microseconds Microseconds Latency      Latency      Microseconds                       
+                           Microseconds Microseconds                                    
+ 8233         732.82       780          848          71.03        1363.78    Trans/s    
+Experiment completed
+Experiment completed

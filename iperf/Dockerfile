@@ -2,10 +2,9 @@
 # fair comparison 
 FROM ubuntu:18.04
 
-# COPY netserver /usr/bin/netserver
-COPY netperf /usr/bin/netperf
+RUN apt-get update \
+    && apt-get -qq install iperf3 -y
 
-ENTRYPOINT ["netperf"]
-# EXPOSE 12865
+ENTRYPOINT ["iperf3"]
 # CMD [] works around a bug in old versions of Docker
 CMD []
